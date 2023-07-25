@@ -20,10 +20,15 @@ const Game = () => {
     setXIsNext(!xIsNext);
   };
 
+  const handleReset = () => {
+    setBoard(Array(9).fill(null));
+    setXIsNext(true);
+  };
+
   return (
     <WinnerProvider squares={board}>
       <div className="game">
-        <Header />
+        <Header onReset={handleReset} />
         <main>
           <div className="main-content">
             <Results />

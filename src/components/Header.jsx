@@ -1,10 +1,10 @@
-import React from "react";
-
-const Header = () => {
+const Header = ({ onReset }) => {
   return (
     <header>
       <h1>TicTacToe</h1>
-      <span>New game</span>
+      <button onClick={onReset}>
+        <span>New game</span>
+      </button>
     </header>
   );
 };
