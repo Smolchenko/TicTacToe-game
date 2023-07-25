@@ -18,4 +18,54 @@ const calculateWinner = (squares) => {
   }
 };
 
-export { calculateWinner };
+const playDataDefault = {
+  x_wins: 0,
+  o_wins: 0,
+  ties: 0,
+};
+
+const getSessionStorageData = (key) => {
+  try {
+    const data = JSON.parse(sessionStorage.getItem(key));
+    return data || playDataDefault;
+  } catch (error) {
+    console.error(`Error parsing local storage data for ${key}:`, error);
+    return playDataDefault;
+  }
+};
+
+const setSessionStorageData = (key, data) => {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+
+const updateData = (winner, gameOver, gameData, setGameData) => {
+  const current_round_winner = winner?.toLowerCase() || null;
+  let updatedPlayData;
+
+  if (current_round_winner) {
+    updatedPlayData = {
+      ...gameData,
+      [`${current_round_winner}_wins`]:
+        gameData[`${current_round_winner}_wins`] + 1,
+    };
+  } else {
+    if (gameOver) {
+      updatedPlayData = {
+        ...gameData,
+        ties: gameData.ties + 1,
+      };
+    }
+  }
+
+  if (updatedPlayData) {
+    setSessionStorageData("playData", updatedPlayData);
+    setGameData(updatedPlayData);
+  }
+};
+
+export {
+  updateData,
+  calculateWinner,
+  getSessionStorageData,
+  setSessionStorageData,
+};
