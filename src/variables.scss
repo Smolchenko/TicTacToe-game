@@ -2,6 +2,7 @@
 $primary_bg: #fef7f7;
 $secondary_bg: #ba90c6;
 $shadow: #ccc;
+$cellHover: #e9d7f0;
 
 // Color Palatte
 $primary: #000;
@@ -12,7 +13,8 @@ $color3: #ba90c6;
 $color4: #c0dbea;
 $color5: #ff7f69;
 $color6: #f2f0f0;
+$color7: #674d6e;
 
-// Text
-$copyright: #ffdcf2;
-$owner_hover: $color3;
+// Footer Text
+$copyright: $neutral;
+$owner_hover: $color7;
