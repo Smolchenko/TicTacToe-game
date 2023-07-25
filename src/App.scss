@@ -68,7 +68,6 @@ body {
       span {
         cursor: pointer;
         font-weight: 600;
-        // padding-bottom: 10px;
         color: $color3;
         transition: color 0.5s;
 
@@ -132,6 +131,14 @@ body {
           width: 250px;
           text-align: center;
           display: block;
+
+          @media (max-width: 280px) {
+            width: auto;
+          }
+        }
+
+        @media (max-width: 280px) {
+          margin: inherit;
         }
       }
 
@@ -144,7 +151,7 @@ body {
           span {
             &:nth-child(2) {
               font-weight: 600;
-              font-size: 20px;
+              font-size: 25px;
               letter-spacing: 1px;
             }
           }
@@ -169,6 +176,7 @@ body {
 
           span {
             font-size: 50px;
+            font-family: "Indie Flower", cursive;
           }
 
           &:not(.not-available):hover {
@@ -185,8 +193,13 @@ body {
           &.highlight-winner-x {
             background-color: $color5;
           }
+
           &.highlight-winner-o {
             background-color: $color3;
+          }
+
+          @media (max-width: 280px) {
+            height: 80px;
           }
         }
       }
@@ -201,6 +214,10 @@ body {
         > div {
           button {
             width: 80px;
+
+            @media (max-width: 280px) {
+              width: 60px;
+            }
           }
         }
       }
@@ -243,5 +260,12 @@ footer {
         }
       }
     }
+  }
+
+  @media (max-width: 280px) {
+    width: 95vw;
+    text-align: end;
+    display: flex;
+    align-self: center;
   }
 }
