@@ -18,7 +18,7 @@ body {
   overflow-x: hidden;
 
   @media (max-width: 768px) {
-    background-size: 200%;
+    background-size: 500%;
   }
 
   a {
@@ -60,15 +60,21 @@ body {
       margin: 0;
     }
 
-    span {
-      cursor: pointer;
-      font-weight: 600;
-      padding-bottom: 10px;
-      color: $color3;
-      transition: color 0.5s;
+    button {
+      font-family: "Indie Flower", cursive;
+      background-color: transparent;
+      border: none;
 
-      &:hover {
-        color: $primary;
+      span {
+        cursor: pointer;
+        font-weight: 600;
+        // padding-bottom: 10px;
+        color: $color3;
+        transition: color 0.5s;
+
+        &:hover {
+          color: $primary;
+        }
       }
     }
 
@@ -204,11 +210,9 @@ body {
 
 footer {
   display: flex;
-  min-height: 100px;
 
   .footer-content {
-    max-width: 60%;
-    margin: auto auto 0 20%;
+    margin: auto;
     display: flex;
 
     svg {
