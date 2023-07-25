@@ -64,9 +64,11 @@ body {
       cursor: pointer;
       font-weight: 600;
       padding-bottom: 10px;
+      color: $color3;
+      transition: color 0.5s;
 
       &:hover {
-        color: $color3;
+        color: $primary;
       }
     }
 
@@ -121,6 +123,9 @@ body {
         &.status {
           padding-top: 30px;
           font-size: 30px;
+          width: 250px;
+          text-align: center;
+          display: block;
         }
       }
 
@@ -150,14 +155,32 @@ body {
       .board {
         .game_square {
           cursor: pointer;
+          justify-content: center;
           border: 1px solid $shadow;
           background-color: $neutral;
           height: 100px;
           transition: background-color 0.5s;
 
-          &:hover {
+          span {
+            font-size: 50px;
+          }
+
+          &:not(.not-available):hover {
+            background-color: $cellHover;
+            border-color: $color7;
+          }
+
+          &.not-available {
+            cursor: default;
             background-color: $color1;
             border: 1px solid $color6;
+          }
+
+          &.highlight-winner-x {
+            background-color: $color5;
+          }
+          &.highlight-winner-o {
+            background-color: $color3;
           }
         }
       }
